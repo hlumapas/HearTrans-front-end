@@ -1,7 +1,7 @@
 import styles from "./NavBar.module.css";
 import { SearchBar } from "./SearchBar";
 import { SideBar } from "./SideBar";
-import logo from "../images/heartranslogo.png";
+import logo from "../images/HearTrans.png";
 
 export function NavBar(props: any) {
   return (
