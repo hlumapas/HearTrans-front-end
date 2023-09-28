@@ -5,16 +5,21 @@
 
 input {
   min-width: 280px;
-  min-height: 35px;
+  min-height: 46px;
 }
 
 .css-yk16xz-control {
-  min-width: 488px;
+  min-width: 490px;
+  min-height: 35px;
 }
 
 :global(.button).search-button {
   background: #f7a8b8;
   border: none;
+}
+
+.white-text {
+  color: white;
 }
 
 :global(.icon) {

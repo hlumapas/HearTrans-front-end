@@ -21,53 +21,50 @@ export function SearchBar(props: any) {
   };
 
   return (
-    <div>
-      <div className="field has-addons">
+    <div className="field is-horizontal">
+      <div className="field-body">
+        <div className="field">
+          <p className="control is-expanded">
+            <input
+              className={`input is-large is-desktop ${styles["input-control"]}`}
+              type="text"
+              placeholder="🔍  Doctor, specialty, procedure..."
+              value={searchQuery}
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+              }}
+            />
+          </p>
+        </div>
+        <div className="field">
+          <p className={`${styles["css-yk16xz-control"]}`}>
+            <GooglePlacesAutocomplete
+              apiKey={`${process.env.REACT_APP_API_KEY_GOOGLE_AUTOCOMPLETE}`}
+              autocompletionRequest={{
+                types: ["geocode"],
+              }}
+              selectProps={{
+                locationQuery,
+                onChange: viewData,
+                placeholder: "📍 City, state, or zip code...",
+                initialValue: "Atlanta",
+              }}
+            />
+          </p>
+        </div>
         <p className="control">
-          <div className="button is-static is-medium is-info is-light">
-            Search
-          </div>
-        </p>
-        <p className="control">
-          <input
-            className={`input is-medium is-desktop ${styles["input-control"]}`}
-            type="text"
-            placeholder="doctors, clinics, specialities..."
-            value={searchQuery}
-            onChange={(e) => {
-              setSearchQuery(e.target.value);
-            }}
-          />
-        </p>
-        <p className="control">
-          <div className="button is-static is-medium is-info is-light">
-            Near
-          </div>
-        </p>
-        <p
-          className={`${styles["css-yk16xz-control"]} ${styles["input-control"]} control`}
-        >
-          <GooglePlacesAutocomplete
-            apiKey={`${process.env.REACT_APP_API_KEY_GOOGLE_AUTOCOMPLETE}`}
-            autocompletionRequest={{
-              types: ["geocode"],
-            }}
-            selectProps={{
-              locationQuery,
-              onChange: viewData,
-            }}
-          />
-        </p>
-        <button className={`button is-medium ${styles["search-button"]}`}>
-          <Link
-            to="/search"
-            onClick={() => performSearch(searchQuery, locationQuery)}
+          <button
+            type="submit"
+            className={`button is-large ${styles["search-button"]}`}
           >
-            <span className="icon is-small">
-              <i className="fas fa-search-location"></i>
-            </span>
-          </Link>
-        </button>
+            <Link
+              to="/search"
+              onClick={() => performSearch(searchQuery, locationQuery)}
+            >
+              <span className="white-text">Find Care</span>
+            </Link>
+          </button>
+        </p>
       </div>
     </div>
   );
