@@ -18,7 +18,7 @@ export const SearchContext = createContext({} as SearchContextType);
 export const SearchContextProvider: React.FC = ({ children }) => {
   const [searchResults, setSearchResults] = useState<ProviderResponse[]>([]);
   const performSearch = async (searchQuery: string, locationQuery: any) => {
-        return (
+    return (
       axios
         // uncomment this when the search location route is ready
         // .get(
@@ -35,14 +35,15 @@ export const SearchContextProvider: React.FC = ({ children }) => {
           setSearchResults(data);
           return data;
         })
-        .catch((error) => {
-          console.log("Error:", error);
-          alert("ooopsie Daisy, couldn't get locations on our map!! 😖 ");
-          return [];
-        })
+      // uncomment when backend API restored
+      // .catch((error) => {
+      //   console.log("Error:", error);
+      //   alert("ooopsie Daisy, couldn't get locations on our map!! 😖 ");
+      //   return [];
+      // })
     );
   };
-  
+
   return (
     <SearchContext.Provider value={{ searchResults, performSearch }}>
       {children}

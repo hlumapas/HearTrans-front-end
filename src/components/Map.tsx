@@ -90,21 +90,22 @@ const Marker: React.FC<any> = ({ text, name }) => {
 const SimpleMap = (props: any) => {
   const { searchResults } = useContext(SearchContext);
 
-  const renderList = () => {
-    return searchResults.map((result: ProviderResponse, index) => {
-      return result.locations.map((location: any) => {
-        const locationIndex = index + 1;
-        return (
-          <Marker
-            lat={location.latitude}
-            lng={location.longitude}
-            text={locationIndex}
-            name={result.fullName}
-          />
-        );
-      });
-    });
-  };
+  // uncomment when API is restored and can loop thru multiple locations
+  // const renderList = () => {
+  //   return searchResults.map((result: ProviderResponse, index) => {
+  //     return result.locations.map((location: any) => {
+  //       const locationIndex = index + 1;
+  //       return (
+  //         <Marker
+  //           lat={location.latitude}
+  //           lng={location.longitude}
+  //           text={locationIndex}
+  //           name={result.fullName}
+  //         />
+  //       );
+  //     });
+  //   });
+  // };
 
   const defaultProps = {
     center: {
@@ -126,11 +127,24 @@ const SimpleMap = (props: any) => {
         defaultZoom={defaultProps.zoom}
         center={props.center || props.location || defaultProps.center}
       >
-        {props.location ? (
+        {/* uncomment when API is restored and can loop through multiple locations */}
+        {/* {props.location ? (
           <Marker lat={props.location.lat} lng={props.location.lng} text="" />
         ) : (
           renderList()
-        )}
+        )} */}
+        <Marker
+          lat={"47.649920"}
+          lng={"-122.347740"}
+          text={"1"}
+          name={"Drew Fuller"}
+        />
+        <Marker
+          lat={"47.567081"}
+          lng={"-122.307671"}
+          text={"2"}
+          name={"Drew Fuller"}
+        />
       </GoogleMapReact>
     </div>
   );
