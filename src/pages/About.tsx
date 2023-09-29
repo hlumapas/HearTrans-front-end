@@ -1,6 +1,6 @@
 import React from "react";
 
-export function Home() {
+export function About() {
   return (
     <div className="container is-primary">
       <section className="section is-section-padding-large">

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Home } from "./pages/Home";
+import { About } from "./pages/About";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { SearchResults } from "./pages/SearchResults";
 import { ProviderProfile } from "./pages/ProviderProfile";
@@ -47,7 +47,7 @@ function App() {
             path="/addprovidertolocation/:id"
             component={AddProviderToLocation}
           />
-          <Route path="/" component={Home} />
+          <Route path="/" component={About} />
         </Switch>
       </Router>
     </SearchContextProvider>

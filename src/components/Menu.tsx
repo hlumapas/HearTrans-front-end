@@ -3,7 +3,7 @@ import * as GoIcons from "react-icons/go";
 
 export const Menu = [
   {
-    title: "Home",
+    title: "About",
     path: "/",
     icon: <FaIcons.FaHome />,
     name: "menu-text",
@@ -19,5 +19,5 @@ export const Menu = [
     path: "/addprovider",
     icon: <FaIcons.FaUserNurse />,
     name: "menu-text",
-  }
+  },
 ];
