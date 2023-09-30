@@ -109,8 +109,8 @@ const SimpleMap = (props: any) => {
 
   const defaultProps = {
     center: {
-      lat: 47.6062,
-      lng: -122.332,
+      lat: 33.753746,
+      lng: -84.38633,
     },
     zoom: 14,
   };
@@ -125,7 +125,8 @@ const SimpleMap = (props: any) => {
         }}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
-        center={props.center || props.location || defaultProps.center}
+        // center={props.center || props.location || defaultProps.center}
+        center={defaultProps.center}
       >
         {/* uncomment when API is restored and can loop through multiple locations */}
         {/* {props.location ? (
@@ -134,16 +135,28 @@ const SimpleMap = (props: any) => {
           renderList()
         )} */}
         <Marker
-          lat={"47.649920"}
-          lng={"-122.347740"}
+          lat={"33.768510"}
+          lng={"-84.386140"}
           text={"1"}
           name={"Drew Fuller"}
         />
         <Marker
-          lat={"47.567081"}
-          lng={"-122.307671"}
+          lat={"33.762690"}
+          lng={"-84.359580"}
           text={"2"}
-          name={"Drew Fuller"}
+          name={"Sadie Green"}
+        />
+        <Marker
+          lat={"33.768370"}
+          lng={"-84.371190"}
+          text={"3"}
+          name={"Marx Watanabe"}
+        />
+        <Marker
+          lat={"33.784070"}
+          lng={"-84.383510"}
+          text={"4"}
+          name={"Sam Mazer"}
         />
       </GoogleMapReact>
     </div>
