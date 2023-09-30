@@ -26,7 +26,7 @@ export function SearchBar(props: any) {
         <div className="field">
           <p className="control is-expanded">
             <input
-              className={`input is-large is-desktop ${styles["input-control"]}`}
+              className={`input is-medium is-desktop ${styles["input-control"]}`}
               type="text"
               placeholder="🔍  Doctor, specialty, procedure..."
               value={searchQuery}
@@ -36,8 +36,10 @@ export function SearchBar(props: any) {
             />
           </p>
         </div>
-        <div className="field">
-          <p className={`${styles["css-yk16xz-control"]}`}>
+        <div className="field is-grouped">
+          <p
+            className={`${styles["css-yk16xz-control"]} ${styles["input-control"]} control is-expanded`}
+          >
             <GooglePlacesAutocomplete
               apiKey={`${process.env.REACT_APP_API_KEY_GOOGLE_AUTOCOMPLETE}`}
               autocompletionRequest={{
@@ -51,20 +53,20 @@ export function SearchBar(props: any) {
               }}
             />
           </p>
-        </div>
-        <p className="control">
-          <button
-            type="submit"
-            className={`button is-large ${styles["search-button"]}`}
-          >
-            <Link
-              to="/search"
-              onClick={() => performSearch(searchQuery, locationQuery)}
+          <p className="control">
+            <button
+              type="submit"
+              className={`button is-medium ${styles["search-button"]}`}
             >
-              <span className="white-text">Find Care</span>
-            </Link>
-          </button>
-        </p>
+              <Link
+                to="/search"
+                onClick={() => performSearch(searchQuery, locationQuery)}
+              >
+                <span className="white-text">Find Care</span>
+              </Link>
+            </button>
+          </p>
+        </div>
       </div>
     </div>
   );

@@ -5,12 +5,11 @@
 
 input {
   min-width: 280px;
-  min-height: 46px;
+  min-height: 37px;
 }
 
 .css-yk16xz-control {
   min-width: 490px;
-  min-height: 35px;
 }
 
 :global(.button).search-button {
