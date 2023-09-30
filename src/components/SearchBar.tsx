@@ -28,7 +28,7 @@ export function SearchBar(props: any) {
             <input
               className={`input is-medium is-desktop ${styles["input-control"]}`}
               type="text"
-              placeholder="🔍  Doctor, specialty, procedure..."
+              placeholder="🔍  Doctor, specialty, procedure...try 'Primary care'"
               value={searchQuery}
               onChange={(e) => {
                 setSearchQuery(e.target.value);
@@ -48,7 +48,7 @@ export function SearchBar(props: any) {
               selectProps={{
                 locationQuery,
                 onChange: viewData,
-                placeholder: "📍 City, state, or zip code...",
+                placeholder: "📍 City, state, or zip code...try 'Atlanta'",
                 initialValue: "Atlanta",
               }}
             />
