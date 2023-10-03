@@ -25,21 +25,71 @@ export function ProviderProfile() {
     reviews: [],
   };
   const { id } = useParams<{ id: string }>();
-  const [provider, setProvider] = useState<ProviderResponse>(emptyProvider);
 
-  useEffect(() => {
-    axios
-      .get(`${REACT_APP_BACKEND_URL}/providers/${id}`)
-      .then(async (response) => {
-        const data: ProviderResponse = await response.data.providerDict;
-        setProvider(data);
-      })
-      .catch((error) => {
-        console.log("Error:", error);
-        console.log(provider);
-        alert("ooopsie Daisy, couldn't get your provider information!! 😖 ");
-      });
-  }, [provider]);
+  // uncomment when API is restored and can request provider profile
+  // const [provider, setProvider] = useState<ProviderResponse>(emptyProvider);
+  // useEffect(() => {
+  //   axios
+  //     .get(`${REACT_APP_BACKEND_URL}/providers/${id}`)
+  //     .then(async (response) => {
+  //       const data: ProviderResponse = await response.data.providerDict;
+  //       setProvider(data);
+  //     })
+  //     .catch((error) => {
+  //       console.log("Error:", error);
+  //       console.log(provider);
+  //       alert("ooopsie Daisy, couldn't get your provider information!! 😖 ");
+  //     });
+  // }, [provider]);
+
+  // sample data
+  const provider = {
+    id: 1,
+    fullName: "Drew Fuller",
+    otherNames: [],
+    pronouns: "she/her",
+    titles: ["MD", "MPH"],
+    specialties: ["Psychology"],
+    languages: ["English"],
+    services: ["Medication Management"],
+    remoteVisits: true,
+    slidingScalePay: true,
+    avgRating: "4.75",
+    locations: [
+      {
+        id: 1,
+        locationName: "Family Medicine",
+        locationTypes: [],
+        googleMapsUrl: "https://maps.app.goo.gl/auZNvVgVepRuZLm28",
+        locationUrl: "753 N 35th St Suite 311, Seattle, WA 98103",
+        latitude: "47.649920",
+        longitude: "-122.347740",
+        phone: "555-555-5555",
+        address: "753 N 35th St Suite 311, Seattle, WA 98103",
+        googlePlaceId: "string",
+        providers: [],
+        locationPoint: {
+          type: "Point",
+          coordinates: [47.64992, -122.34774],
+        },
+      },
+    ],
+    reviews: [
+      {
+        id: 1,
+        rating: 5,
+        reviewBody:
+          "Dr. Fuller is an attentive listener and cared so much about getting to know me! It meant a lot that her staff called me by the correct pronouns.",
+        contentWarnings: ["NONE :D"],
+      },
+      {
+        id: 2,
+        rating: 4.5,
+        reviewBody: "Dr. Fuller is AMAZING.",
+        contentWarnings: [],
+      },
+    ],
+  };
 
   // delete this provider
   const deleteProvider = (
