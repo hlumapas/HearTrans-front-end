@@ -1,8 +1,10 @@
 # HearTrans Web App
 HearTrans is a Capstone Project. The web app is to help transgender, intersex, and gender nonconforming individuals to find medical providers and locations.
 
+<img width="1677" alt="Screenshot 2023-10-19 at 10 09 41 PM" src="https://github.com/hlumapas/HearTrans-front-end/assets/65185792/d86c4db4-747c-4f53-9419-087b367ad89d">
+
 ### Deployed Environments
-Website: [Click here!](https://hear-trans.onrender.com) 
+Website: [https://hear-trans.onrender.com](https://hear-trans.onrender.com) 
 
 ### Tech 
 - TypeScript
